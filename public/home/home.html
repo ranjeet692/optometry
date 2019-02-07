@@ -1,0 +1,66 @@
+<md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="z2">
+    <md-toolbar class="md-theme-indigo">
+        <span flex></span>
+        <div layout="column" class="md-toolbar-tools-bottom inset">
+            <user-avatar></user-avatar>
+            <span></span>
+        </div>
+    </md-toolbar>
+    <md-content layout-margin>
+        <md-list>
+            <md-item>
+                <md-button ng-click="profile()" >
+                    Profile
+                <md-button>
+            </md-item>
+            <md-item>
+                <md-button ng-click="logout()" class="md-accent">
+                    Logout
+                <md-button>
+            </md-item>
+        </md-list>
+    </md-content>
+</md-sidenav>
+<div ng-cloak>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" ng-click="toggleSidenav()" aria-label="Side Menu">
+                <md-icon md-svg-src="assets/icons/menu_black.svg"></md-icon>
+            </md-button>    
+            <h2>
+                Optometry Log
+            </h2>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+    <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="Posting" ng-click="currentTab('posting')">
+            <md-content class="md-padding">
+                <h1>Postings</h1>
+                <h3>Recent Postings</h3>
+            </md-content>
+        </md-tab>
+        <md-tab label="Summary" ng-click="currentTab('summary')">
+            <md-content class="md-padding">
+                <h1>Summary</h1>
+                <div ng-include src="'home/summary/summary.html'"></div>
+            </md-content>
+        </md-tab>
+        <md-tab label="Evaluation" ng-click="currentTab('evaluation')">
+            <md-content class="md-padding">
+                <h1>Continous Evaluation</h1>
+                <div ng-include src="'home/evaluation/evaluation.html'"></div>
+            </md-content>
+        </md-tab>
+        <md-tab label="Guidlines" ng-click="currentTab('guidlines')">
+            <md-content class="md-padding">
+                <h1>Log Maintenance Guidlines</h1>
+                <div ng-include src="'home/guidline/guidline.html'"></div>
+            </md-content>
+        </md-tab>
+    </md-tabs>
+    <md-button class="md-fab md-fab-bottom-right" aria-label="Add Posting" style="position:fixed;" ng-show="selectedTab=='posting'" ng-click="addNewDialog($event)">
+        <md-icon md-svg-src="assets/icons/add_black.svg"></md-icon>
+    </md-button>
+
+</div>

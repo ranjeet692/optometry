@@ -1,0 +1,100 @@
+<div ng-cloak>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>New Posting</h2>
+            <span flex></span>
+            <md-button class="md-button" ng-click="back()">
+                Home
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-content class="md-padding"> 
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Basic" ng-click="currentTab('basic')">
+                <md-content class="md-padding">
+                    <form name="userForm">
+                        <div layout layout-sm="row"> 
+                            <md-input-container flex> 
+                                <label>Name</label>
+                                <input name="name" ng-model="user.name" required> 
+                                <div ng-messages="userForm.name.$error" role="alert" multiple="">
+                                    <div ng-message="required" class="my-message">Please give your full name.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div layout layout-sm="row"> 
+                            <md-input-container flex> 
+                                <md-radio-group ng-model="user.gender">
+                                    <md-radio-button value="Male" class="md-primary">Male</md-radio-button>
+                                    <md-radio-button value="Female" class="md-primary">Female</md-radio-button>
+                                </md-radio-group> 
+                                <div ng-messages="userForm.gender.$error" role="alert" multiple="">
+                                    <div ng-message="required" class="my-message">Please select your gender</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div layout layout-sm="row"> 
+                            <md-input-container flex> 
+                                <label>Age</label>
+                                <input type="number" name="age" ng-model="user.age" md-placeholder="Enter your age" required>
+                                <div ng-messages="userForm.age.$error" role="alert" multiple="">
+                                    <div ng-message="required" class="my-message">Please enter your age</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div layout layout-sm="row"> 
+                            <md-input-container flex> 
+                                <label>Purpose of Visit</label>
+                                <input type="text" name="purpose" ng-model="user.purpose" required> 
+                                <div ng-messages="userForm.purpose.$error" role="alert" multiple="">
+                                    <div ng-message="required" class="my-message">Please give purpose of visit.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div layout layout-sm="row"> 
+                            <md-input-container flex> 
+                                <label>Chief Complaints</label>
+                                <input type="text" name="complaint" ng-model="user.complaint" required> 
+                                <div ng-messages="userForm.complaint.$error" role="alert" multiple="">
+                                    <div ng-message="required" class="my-message">Please give complaint details.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div layout layout-sm="row"> 
+                            <md-input-container flex> 
+                                <label>Past Ocular History</label>
+                                <input type="text" name="history" ng-model="user.history" required> 
+                                <div ng-messages="userForm.history.$error" role="alert" multiple="">
+                                    <div ng-message="required" class="my-message">Please give past ocular history.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <span flex></span> 
+                        <md-button ng-click="cancel()"> Cancel </md-button> 
+                        <md-button ng-disabled="!userForm.$valid" ng-click="updateProfile()" class="md-primary"> Save </md-button>
+                    </form> 
+                </md-content>
+            </md-tab>
+            <md-tab label="Visual Acuity" ng-click="currentTab('visual')">
+                <md-content class="md-padding">
+                </md-content>
+            </md-tab>
+            <md-tab label="Keratometry & More" ng-click="currentTab('keratometry')">
+                <md-content class="md-padding">
+                </md-content>
+            </md-tab>
+            <md-tab label="Diagnosis" ng-click="currentTab('diagnosis')">
+                <md-content class="md-padding">
+                </md-content>
+            </md-tab>
+            <md-tab label="Intervention" ng-click="currentTab('intervention')">
+                <md-content class="md-padding">
+                </md-content>
+            </md-tab>
+            <md-tab label="Learning" ng-click="currentTab('learning')">
+                <md-content class="md-padding">
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-content> 
+</div>
