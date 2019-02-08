@@ -36,13 +36,17 @@ app.controller('PostingController', function($scope, $state, $stateParams, $mdTo
         }    
         $scope.posting.timestamp = new Date();
         postingObject.$add($scope.posting).then(function(ref) {
-            $mdToast.simple()
-                .textContent('Data Saved Succussfully')
-                .hideDelay(3000)
+            $mdToast.show(
+                $mdToast.simple()
+                    .textContent('Data Saved Succussfully')
+                    .hideDelay(3000)
+            );
         }, function(error) {
-            $mdToast.simple()
-                .textContent(error)
-                .hideDelay(3000)
+            $mdToast.show(
+                $mdToast.simple()
+                    .textContent(error)
+                    .hideDelay(3000)
+            );
         });
     }
 
