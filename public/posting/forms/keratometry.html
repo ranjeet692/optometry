@@ -1,31 +1,36 @@
 <form name="userForm">
     <div layout-gt-sm="row"> 
         <md-input-container class="md-block" flex-gt-sm> 
-            <label><strong>Unaided</strong></label>
+            <label><strong>Vertical</strong></label>
         </md-input-container>
         <md-input-container class="md-block" flex-gt-sm> 
-            <label>Distance OD</label>
+            <label>Distance</label>
             <input name="adistod" ng-model="user.unaidedDistanceOd" required> 
             <div ng-messages="userForm.adistod.$error" role="alert" multiple="">
                 <div ng-message="required" class="my-message">Please enter Distance OD</div>
             </div>
         </md-input-container>
         <md-input-container class="md-block" flex-gt-sm> 
-            <label>Distance OS</label>
+            <label>Near</label>
             <input name="adistos" ng-model="user.unaidedDistanceOs" required> 
             <div ng-messages="userForm.adistos.$error" role="alert" multiple="">
                 <div ng-message="required" class="my-message">Please enter Distance OS</div>
             </div>
         </md-input-container>
+    </div>
+    <div layout-gt-sm="row"> 
         <md-input-container class="md-block" flex-gt-sm> 
-            <label>Near OD</label>
+            <label><strong>Horizonatal</strong></label>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm> 
+            <label>Distance</label>
             <input name="anearod" ng-model="user.unaidedNearOd" required> 
             <div ng-messages="userForm.adistod.$error" role="alert" multiple="">
                 <div ng-message="required" class="my-message">Please enter Near OD</div>
             </div>
         </md-input-container>
         <md-input-container class="md-block" flex-gt-sm> 
-            <label>Near OS</label>
+            <label>Near</label>
             <input name="anearos" ng-model="user.unaidedNeareOs" required> 
             <div ng-messages="userForm.adistos.$error" role="alert" multiple="">
                 <div ng-message="required" class="my-message">Please enter Near OS</div>
@@ -34,27 +39,21 @@
     </div>
     <div layout-gt-sm="row"> 
         <md-input-container class="md-block" flex-gt-sm> 
-            <label><strong>With Pinhole</strong></label>
+            <label><strong>Comments</strong></label>
         </md-input-container>
         <md-input-container class="md-block" flex-gt-sm> 
-            <label>Distance OD</label>
-            <input name="adistod" ng-model="user.unaidedDistanceOd" required> 
+            <label>Distance</label>
+            <input name="anearod" ng-model="user.unaidedNearOd" required> 
             <div ng-messages="userForm.adistod.$error" role="alert" multiple="">
-                <div ng-message="required" class="my-message">Please enter Distance OD</div>
+                <div ng-message="required" class="my-message">Please enter Near OD</div>
             </div>
         </md-input-container>
         <md-input-container class="md-block" flex-gt-sm> 
-            <label>Distance OS</label>
-            <input name="adistos" ng-model="user.unaidedDistanceOs" required> 
+            <label>Near</label>
+            <input name="anearos" ng-model="user.unaidedNeareOs" required> 
             <div ng-messages="userForm.adistos.$error" role="alert" multiple="">
-                <div ng-message="required" class="my-message">Please enter Distance OS</div>
+                <div ng-message="required" class="my-message">Please enter Near OS</div>
             </div>
-        </md-input-container>
-        <md-input-container class="md-block" flex-gt-sm> 
-            
-        </md-input-container>
-        <md-input-container class="md-block" flex-gt-sm> 
-            
         </md-input-container>
     </div>
     <span flex></span> 
