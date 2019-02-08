@@ -1,0 +1,63 @@
+<form name="userForm">
+        <div layout-gt-sm="row"> 
+            <md-input-container class="md-block" flex-gt-sm> 
+                <label><strong>Unaided</strong></label>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm> 
+                <label>Distance OD</label>
+                <input name="adistod" ng-model="user.unaidedDistanceOd" required> 
+                <div ng-messages="userForm.adistod.$error" role="alert" multiple="">
+                    <div ng-message="required" class="my-message">Please enter Distance OD</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm> 
+                <label>Distance OS</label>
+                <input name="adistos" ng-model="user.unaidedDistanceOs" required> 
+                <div ng-messages="userForm.adistos.$error" role="alert" multiple="">
+                    <div ng-message="required" class="my-message">Please enter Distance OS</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm> 
+                <label>Near OD</label>
+                <input name="anearod" ng-model="user.unaidedNearOd" required> 
+                <div ng-messages="userForm.adistod.$error" role="alert" multiple="">
+                    <div ng-message="required" class="my-message">Please enter Near OD</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm> 
+                <label>Near OS</label>
+                <input name="anearos" ng-model="user.unaidedNeareOs" required> 
+                <div ng-messages="userForm.adistos.$error" role="alert" multiple="">
+                    <div ng-message="required" class="my-message">Please enter Near OS</div>
+                </div>
+            </md-input-container>
+        </div>
+        <div layout-gt-sm="row"> 
+            <md-input-container class="md-block" flex-gt-sm> 
+                <label><strong>With Pinhole</strong></label>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm> 
+                <label>Distance OD</label>
+                <input name="adistod" ng-model="user.unaidedDistanceOd" required> 
+                <div ng-messages="userForm.adistod.$error" role="alert" multiple="">
+                    <div ng-message="required" class="my-message">Please enter Distance OD</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm> 
+                <label>Distance OS</label>
+                <input name="adistos" ng-model="user.unaidedDistanceOs" required> 
+                <div ng-messages="userForm.adistos.$error" role="alert" multiple="">
+                    <div ng-message="required" class="my-message">Please enter Distance OS</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm> 
+                
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm> 
+               
+            </md-input-container>
+        </div>
+        <span flex></span> 
+        <md-button ng-click="cancel()"> Cancel </md-button> 
+        <md-button ng-disabled="!userForm.$valid" ng-click="updateProfile()" class="md-primary"> Save </md-button>
+    </form>

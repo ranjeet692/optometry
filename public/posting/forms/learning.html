@@ -1,0 +1,14 @@
+<form name="userForm">
+    <div layout layout-sm="row"> 
+        <md-input-container flex>
+            <label>Learning</label>
+            <textarea ng-model="user.learning" name="learning" md-maxlength="250" rows="5" cols="10" md-select-on-focus></textarea>
+            <div ng-messages="userForm.learning.$error"  role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please enter learning information</div>
+            </div>
+        </md-input-container>
+    </div>
+    <span flex></span> 
+    <md-button ng-click="cancel()"> Cancel </md-button> 
+    <md-button ng-disabled="!userForm.$valid" ng-click="updateProfile()" class="md-primary"> Save </md-button>
+</form>

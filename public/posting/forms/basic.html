@@ -1,0 +1,124 @@
+<form name="userForm">
+    <div layout layout-sm="row"> 
+        <md-input-container flex> 
+            <label>MRD No</label>
+            <input name="mrdNo" ng-model="user.mrdNo" required> 
+            <div ng-messages="userForm.mrdNo.$error" role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please enter MRD No</div>
+            </div>
+        </md-input-container>
+    </div>
+    <div layout layout-sm="row"> 
+        <md-input-container flex> 
+            <label>Name</label>
+            <input name="name" ng-model="user.name" required> 
+            <div ng-messages="userForm.name.$error" role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please give your full name</div>
+            </div>
+        </md-input-container>
+    </div>
+    <div layout layout-sm="row"> 
+        <md-input-container flex> 
+            <md-radio-group ng-model="user.gender">
+                <md-radio-button value="Male" class="md-primary">Male</md-radio-button>
+                <md-radio-button value="Female" class="md-primary">Female</md-radio-button>
+            </md-radio-group> 
+            <div ng-messages="userForm.gender.$error" role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please select your gender</div>
+            </div>
+        </md-input-container>
+    </div>
+    <div layout layout-sm="row"> 
+        <md-input-container flex> 
+            <label>Age</label>
+            <input type="number" name="age" ng-model="user.age" md-placeholder="Enter your age" required>
+            <div ng-messages="userForm.age.$error" role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please enter your age</div>
+            </div>
+        </md-input-container>
+    </div>
+    <div layout layout-sm="row"> 
+        <md-input-container flex> 
+            <label>Purpose of Visit</label>
+            <input type="text" name="purpose" ng-model="user.purpose" required> 
+            <div ng-messages="userForm.purpose.$error" role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please give purpose of visit.</div>
+            </div>
+        </md-input-container>
+    </div>
+    <div layout layout-sm="row"> 
+        <md-input-container flex> 
+            <label>Chief Complaints</label>
+            <input type="text" name="complaint" ng-model="user.complaint" required> 
+            <div ng-messages="userForm.complaint.$error" role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please give complaint details.</div>
+            </div>
+        </md-input-container>
+    </div>
+    <div layout layout-sm="row"> 
+        <md-input-container flex> 
+            <label>Past Ocular History</label>
+            <input type="text" name="history" ng-model="user.history" required> 
+            <div ng-messages="userForm.history.$error" role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please give past ocular history.</div>
+            </div>
+        </md-input-container>
+    </div>
+    <div layout layout-sm="row"> 
+        <md-input-container flex> 
+            <label>Current Medications</label>
+            <input type="text" name="currentMedication" ng-model="user.currentMedication" > 
+            <div ng-messages="userForm.currentMedication.$error" role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please give current medication information</div>
+            </div>
+        </md-input-container>
+    </div>
+    <div layout layout-sm="row"> 
+        <md-input-container flex> 
+            <label>Past Medical History</label>
+            <input type="text" name="medicalHistory" ng-model="user.medicalHistory" > 
+            <div ng-messages="userForm.medicalHistory.$error" role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please give past medical history information</div>
+            </div>
+        </md-input-container>
+    </div>
+    <div layout layout-sm="row"> 
+        <md-input-container flex> 
+            <label>Recent Investigation</label>
+            <input type="text" name="recentInvestigation" ng-model="user.recentInvestigation" > 
+            <div ng-messages="userForm.recentInvestigation.$error" role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please give recent investigation information</div>
+            </div>
+        </md-input-container>
+    </div>
+    <div layout layout-sm="row"> 
+        <md-input-container flex> 
+            <label>Family History</label>
+            <input type="text" name="familyHistory" ng-model="user.familyHistory" > 
+            <div ng-messages="userForm.familyHistory.$error" role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please give family history information</div>
+            </div>
+        </md-input-container>
+    </div>
+    <div layout layout-sm="row"> 
+        <md-input-container flex> 
+            <label>Birth History</label>
+            <input type="text" name="birthHistory" ng-model="user.birthHistory" > 
+            <div ng-messages="userForm.birthHistory.$error" role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please give birth history information</div>
+            </div>
+        </md-input-container>
+    </div>
+    <div layout layout-sm="row"> 
+        <md-input-container flex> 
+            <label>Allergy History</label>
+            <input type="text" name="allergyHistory" ng-model="user.allergyHistory" > 
+            <div ng-messages="userForm.allergyHistory.$error" role="alert" multiple="">
+                <div ng-message="required" class="my-message">Please give allergy history information</div>
+            </div>
+        </md-input-container>
+    </div>
+    <span flex></span> 
+    <md-button ng-click="cancel()"> Cancel </md-button> 
+    <md-button ng-disabled="!userForm.$valid" ng-click="updateProfile()" class="md-primary"> Save </md-button>
+</form>
