@@ -1,26 +1,13 @@
-app.controller('HomeController', function($scope, $state, $mdSidenav, $mdDialog, $mdToast, PostingService) {
+app.controller('HomeController', function($scope, $state, $mdSidenav, $mdDialog, $mdToast, $firebaseObject, $firebaseArray, PostingService) {
     
     var current = 'posting';
     $scope.selectedTab = 'posting';
     var userid = localStorage.getItem('userid');
     var username = localStorage.getItem('username');
 
-    $scope.postingMenu = [
-        {name: 'General OPD', id:'general'},
-        {name: 'Community OPD', id:'community'},
-        {name: 'Glaucoma OPD', id:'glaucoma'},
-        {name: 'Uvea OPD', id:'uvea'},
-        {name: 'Pediatric OPD', id:'pediatric'},
-        {name: 'Retina OPD', id:'retina'},
-        {name: 'Corena OPD', id:'corena'},
-        {name: 'Oculoplasty OPD', id:'oculoplasty'},
-        {name: 'Refraction Clinic', id:'refrection'},
-        {name: 'Contact Lens Clinic', id:'contactlens'},
-        {name: 'Binocular Vision Clinic', id:'binocular'},
-        {name: 'Low Vision Vision Clinic', id:'lowvision'},
-        {name: 'Dispensing-Opticals', id:'dispensing'},
-        {name: 'Biometry', id:'biometry'}
-    ];
+    var ref = firebase.database().ref();
+    $scope.postingLists = $firebaseArray(ref);
+
     if (!userid) {
         $state.go('login');
     }
@@ -55,14 +42,13 @@ app.controller('HomeController', function($scope, $state, $mdSidenav, $mdDialog,
 
     function newPostingDialog(ev) {
         $mdDialog.show({
-            controller:'HomeController',
+            controller:'PostingDialogController',
             templateUrl: 'home/dialogs/posting.html',
             parent: angular.element(document.body),
             targetEvent: ev,
             clickOutsideToClose:true
-        }).then(function(submitExercise) {
-           
-            //submission event
+        }).then(function(type) {
+            $state.go('posting', {postingtype: type});
         }, function() {
             //cancel event
         });

@@ -38,6 +38,20 @@
             <md-content class="md-padding">
                 <h1>Postings</h1>
                 <h3>Recent Postings</h3>
+                <div ng-repeat="item in postingLists | limitTo:10">
+                    <md-card>
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">{{item.name}}</span>
+                                <span class="md-subhead">{{item.type.name}} &nbsp; &nbsp; {{item.timestamp | date:'medium'}}</span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                            <p>MRD No: {{item.mrdNo}}</p>
+                            <p>Purpose : {{item.purpose}}</p>
+                        </md-card-content>
+                    </md-card>
+                </div>
             </md-content>
         </md-tab>
         <md-tab label="Summary" ng-click="currentTab('summary')">

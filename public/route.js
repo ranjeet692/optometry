@@ -20,7 +20,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: '/posting/posting.html',
             controller: 'PostingController',
             params: {
-                postingtype: null
+                postingtype: null,
             }
         })
         .state('profile', {

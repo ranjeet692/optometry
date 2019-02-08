@@ -9,7 +9,7 @@
         </div>
     </md-toolbar>
     <md-content class="md-padding"> 
-        <md-list-item ng-repeat="posting in postingMenu" ng-click="createPosting('{{posting.id}}')">
+        <md-list-item ng-repeat="posting in postingMenu" ng-click="createPosting(posting.id)">
             <p style="cursor:pointer; width: 400px;" > {{ posting.name }} </p>
         </md-list-item>
     </md-content> 

@@ -1,4 +1,4 @@
-var app = angular.module('optometryLog', ['ngMaterial', 'ngMessages', 'ui.router']);
+var app = angular.module('optometryLog', ['ngMaterial', 'ngMessages', 'ui.router', 'firebase']);
 
 app.config(function($mdThemingProvider) {
 
@@ -17,7 +17,7 @@ app.config(function($mdThemingProvider) {
         theme: 'default', // Default is 'default'
         palette: 'cyan', // Default is 'primary', any basic material palette and extended palettes are available
         hue: '200' // Default is '800'
-    });    
+    });   
 });
 
 app.run(function($location) {
